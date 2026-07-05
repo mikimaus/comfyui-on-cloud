@@ -4,48 +4,26 @@ mkdir -p ./models/clip/
 mkdir -p ./models/clip_vision/
 mkdir -p ./models/ipadapter/
 mkdir -p ./models/upscale_models/
+mkdir -p ./models/text_encoders/
+mkdir -p ./models/loras/
+#anima-base-1.0
+wget -c https://civitai.red/api/download/models/2967640?fileId=2847103 -P .models/checkpoints/
+wget -c https://civitai.red/api/download/models/2967640?fileId=2847092 -P .models/text_encoders/
+wget -c https://civitai.red/api/download/models/3049284?fileId=2934431 -P .models/checkpoints/
 
+# Loras
 
-#sd_xl and refiner
-wget -c https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors -P ./models/checkpoints/
-wget -c https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors -P ./models/checkpoints/
-
-#sd_xl_base_1.0_0.9vae
-wget https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0_0.9vae.safetensors -P ./models/checkpoints/
-
-
-# v1-5-pruned
-wget https://huggingface.co/runwayml/stable-diffusion-v1-5/blob/main/v1-5-pruned.safetensors -P ./models/checkpoints/
-
-# v1-5-pruned-emaonly
-wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.safetensors -P ./models/checkpoints/
-
-# realisticVisionV51_v51VAE
-wget https://huggingface.co/frankjoshua/realisticVisionV51_v51VAE/resolve/main/realisticVisionV51_v51VAE.safetensors -P ./models/checkpoints/
-
-# turbovision xl
-wget https://huggingface.co/akshitapps/TurboVisionXL/resolve/main/turbovisionxlSuperFastXLBasedOnNew_tvxlV431Bakedvae.safetensors -P ./models/checkpoints/
-
-# Absolute Reality 1.8.1
-wget https://huggingface.co/digiplay/AbsoluteReality_v1.8.1/resolve/main/absolutereality_v181.safetensors -P ./models/checkpoints/
-
-# Absolute Reality 1.8.1.INPAINTING
-#wget https://civitai.com/api/download/models/134084 --content-disposition -P ./models/checkpoints/
-
-# dreamshaper 8
-wget https://huggingface.co/autismanon/modeldump/resolve/main/dreamshaper_8.safetensors -P ./models/checkpoints/
-
-# dreamshaper xl
-wget https://civitai.com/api/download/models/251662 --content-disposition -P ./models/checkpoints/
-
-# epiCPhotoGasm-X photoreal
-wget https://civitai.com/api/download/models/132632 --content-disposition -P ./models/checkpoints/
-
-# perfectdeliberate
-#wget https://civitai.com/api/download/models/253055 --content-disposition -P ./models/checkpoints/
-
-#epicrealism naturalSin
-#wget https://huggingface.co/misri/epicrealism_naturalSin/resolve/main/epicrealism_naturalSin.safetensors -P ./models/checkpoints/
+wget -c https://civitai.red/api/download/models/3052892?fileId=2931603 -P .models/loras/
+wget -c https://civitai.red/api/download/models/2945421?fileId=2824598 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3083706?fileId=2963073 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3036905?fileId=2915794 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3087329?fileId=2966811 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3089149?fileId=2968664 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3017358?fileId=2896293 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3068784?fileId=2947506 -P .models/loras/
+wget -c https://civitai.red/api/download/models/2962831?fileId=2842131 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3057337?fileId=2936001 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3088048?fileId=2967536 -P .models/loras/
 
 # ipadapters
 wget https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors -P ./models/ipadapter/
@@ -78,15 +56,14 @@ wget https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/reso
 #wget -O ./models/controlnet/depth-sdxl-1.0-diffusion_pytorch_model.bin https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0-mid/resolve/main/diffusion_pytorch_model.bin
 
 #vae
-wget https://huggingface.co/stabilityai/sd-vae-ft-ema-original/resolve/main/vae-ft-ema-560000-ema-pruned.ckpt -P ./models/vae/
+wget https://civitai.red/api/download/models/2967640?fileId=2847091 -P ./models/vae/
 #wget -O ./models/controlnet/vae_sdxl-1.0-inpainting-0.1.safetensors https://huggingface.co/diffusers/stable-diffusion-xl-1.0-inpainting-0.1/resolve/main/vae/diffusion_pytorch_model.safetensors
 
- # clip vision
+# clip vision
 ## SDXL
 #wget -O  ./models/clip_vision/SDXL_CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors   https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors
 ## SD1.5
 wget -O  ./models/clip_vision/SD15_CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors   https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
-
 
 
 # upscaler
