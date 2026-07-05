@@ -6,6 +6,8 @@ mkdir -p ./models/ipadapter/
 mkdir -p ./models/upscale_models/
 mkdir -p ./models/text_encoders/
 mkdir -p ./models/loras/
+
+
 #anima-base-1.0
 wget -c https://civitai.red/api/download/models/2967640?fileId=2847103 -P .models/checkpoints/
 wget -c https://civitai.red/api/download/models/2967640?fileId=2847092 -P .models/text_encoders/
@@ -25,6 +27,8 @@ wget -c https://civitai.red/api/download/models/2962831?fileId=2842131 -P .model
 wget -c https://civitai.red/api/download/models/3057337?fileId=2936001 -P .models/loras/
 wget -c https://civitai.red/api/download/models/3088048?fileId=2967536 -P .models/loras/
 wget -c https://civitai.red/api/download/models/3099910?fileId=2979620 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3038905?fileId=2917772 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3045824?fileId=2924551 -P .models/loras/
 
 # ipadapters
 wget https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors -P ./models/ipadapter/
@@ -69,6 +73,28 @@ wget -O  ./models/clip_vision/SD15_CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensor
 
 # upscaler
 wget https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x_NickelbackFS_72000_G.pth -P  ./models/upscale_models
+wget https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth -P ./models/upscale_models/
+
+# 1. RealESRGAN anime 6B - default bagus untuk anime
+wget -O ./models/upscale_models/RealESRGAN_x4plus_anime_6B.pth \
+"https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.2.4/RealESRGAN_x4plus_anime_6B.pth"
+
+# 2. 4x-AnimeSharp
+wget -O ./models/upscale_models/4x-AnimeSharp.pth \
+"https://huggingface.co/utnah/esrgan/resolve/main/4x-AnimeSharp.pth?download=true"
+
+# 3. 4x IllustrationJaNai V1 ESRGAN
+wget -O ./models/upscale_models/4x_IllustrationJaNai_V1_ESRGAN_135k.pth \
+"https://huggingface.co/easygoing0114/AI_upscalers/resolve/main/4x_IllustrationJaNai_V1_ESRGAN_135k.pth?download=true"
+
+# 4. 4x-UltraSharp
+wget -O ./models/upscale_models/4x-UltraSharp.pth \
+"https://huggingface.co/lokCX/4x-Ultrasharp/resolve/main/4x-UltraSharp.pth?download=true"
+
+# 5. 4x_NMKD-Siax_200k
+wget -O ./models/upscale_models/4x_NMKD-Siax_200k.pth \
+"https://huggingface.co/uwg/upscaler/resolve/main/ESRGAN/4x_NMKD-Siax_200k.pth?download=true"
+
 # segment anything
 ## GroundingDINO_SwinT_OGC
 #wget https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinT_OGC.cfg.py -P ./models/grounding-dino/
