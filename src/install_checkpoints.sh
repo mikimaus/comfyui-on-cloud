@@ -24,6 +24,7 @@ wget -c https://civitai.red/api/download/models/3068784?fileId=2947506 -P .model
 wget -c https://civitai.red/api/download/models/2962831?fileId=2842131 -P .models/loras/
 wget -c https://civitai.red/api/download/models/3057337?fileId=2936001 -P .models/loras/
 wget -c https://civitai.red/api/download/models/3088048?fileId=2967536 -P .models/loras/
+wget -c https://civitai.red/api/download/models/3099910?fileId=2979620 -P .models/loras/
 
 # ipadapters
 wget https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors -P ./models/ipadapter/
